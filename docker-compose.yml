@@ -1,0 +1,27 @@
+version: '3.4'
+
+services:
+
+  platform_management:
+    container_name: platform_management_c
+    build: ./platform-management
+    ports:
+      - "9002:80"
+
+  # business_configuration:
+  #   container_name: business_configuration_c
+  #   build: ./image/business-configuration
+  #   ports:
+  #     - "9003:80"
+
+  business_management:
+    container_name: business_management
+    build: ./business-management
+    ports:
+      - "9004:80"
+
+  gatewayapp:
+    container_name: gatewayapp-c
+    build: ./gatewayapp
+    ports:
+      - "80:80"
