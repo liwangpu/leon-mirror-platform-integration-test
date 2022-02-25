@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "copy:platform-management": "gulp copyPlatformManagement",
+    "copy:business-management": "gulp copyBusinessManagement",
+    "test:update-env": "gulp updateAppEnv",
+    "test": "npm run copy:platform-management && npm run copy:business-management && npm run test:update-env"
   },
   "repository": {
     "type": "git",
@@ -21,6 +24,7 @@
     "gulp": "^4.0.2",
     "gulp-concat": "^2.6.1",
     "gulp-dart-sass": "^1.0.2",
-    "gulp-rename": "^2.0.0"
+    "gulp-rename": "^2.0.0",
+    "del": "^5.1.0"
   }
 }
