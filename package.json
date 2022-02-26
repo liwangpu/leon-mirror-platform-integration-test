@@ -5,9 +5,11 @@
   "main": "index.js",
   "scripts": {
     "copy:platform-management": "gulp copyPlatformManagement",
+    "copy:business-configuration": "gulp copyBusinessConfiguration",
     "copy:business-management": "gulp copyBusinessManagement",
+    "copy:business-foreground": "gulp copyBusinessForeground",
     "test:update-env": "gulp updateAppEnv",
-    "test": "npm run copy:platform-management && npm run copy:business-management && npm run test:update-env"
+    "test": "npm run copy:platform-management && npm run copy:business-configuration && npm run copy:business-management && npm run copy:business-foreground && npm run test:update-env"
   },
   "repository": {
     "type": "git",

@@ -7,21 +7,32 @@ services:
     build: ./platform-management
     ports:
       - "9002:80"
+    restart: always
 
-  # business_configuration:
-  #   container_name: business_configuration_c
-  #   build: ./image/business-configuration
-  #   ports:
-  #     - "9003:80"
+  business_configuration:
+    container_name: business_configuration_c
+    build: ./business-configuration
+    ports:
+      - "9003:80"
+    restart: always
 
   business_management:
     container_name: business_management_c
     build: ./business-management
     ports:
       - "9004:80"
+    restart: always
+
+  business_foreground:
+    container_name: business_foreground_c
+    build: ./business-foreground
+    ports:
+      - "9005:80"
+    restart: always
 
   gatewayapp:
     container_name: gatewayapp-c
     build: ./gatewayapp
     ports:
       - "80:80"
+    restart: always
